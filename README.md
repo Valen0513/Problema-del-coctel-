@@ -42,10 +42,20 @@ Se grabaron las señales de audio mientras los hablantes conversaban simultánea
 Se preprocesaron las señales, eliminando posibles ruidos no deseados y normalizando su amplitud.
 - Primero se convierten los audios que estan en unknown a archivos wav para que sean leidos por la libreria librosa en python 
 - Se importaron estas bibliotecas para que leyeran el audio
+  
 ![image](https://github.com/user-attachments/assets/39f3659c-db98-497c-b565-29e006f635ba)
-- Luego a una variable se le asigna el nombre del archivo que ya esta en wav, donde sr es la frecuencia de muestreo, que corresponde a 44,1 khz 
+
+- Luego a una variable se le asigna el nombre del archivo que ya esta en wav, donde sr es la frecuencia de muestreo, que corresponde a 44,1 khz
+   
  ![image](https://github.com/user-attachments/assets/8e73e659-02d2-47f5-bdab-e11f43c63b15)
 
+- Se calcula cuántas muestras corresponden a los primeros 2 minutos de la grabación, se extraen los primeros 2 minutos de cada audio para analizar solo esa parte de la señal, para luego calcular su SNR de ambos audios se utiliza la seiguiente formula:
+
+![Captura de pantalla 2025-02-28 162453](https://github.com/user-attachments/assets/5f26792f-00fc-4089-bc47-08d6a0176fd4)
+
+Donde: Pseñal es la potencia de la voz capturada por cada audio, y Pruido es la potencia de la grabacion del ambiente 
+
+![Captura de pantalla 2025-02-28 161837](https://github.com/user-attachments/assets/842625cc-4b5b-4c26-956f-9c22f4929693)
 
 
 Se aplicó el método ICA para separar las fuentes independientes.
