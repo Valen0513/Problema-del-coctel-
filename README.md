@@ -63,7 +63,8 @@ Utilizando la formula anteriormente mencionada se calcula el SNR de cada audio c
 
 Los resultados fueron: el SNR del audio 1 es:  19.52798366546631 dB, el SNR del audio 2 es:  24.88265037536621 dB
 
-- Se establecieron las distancias en metros entre los hablantes y los celulares, cada señal de audio tiene un retardo en función de la distancia que el sonido debe recorrer desde el hablante hasta el celular. Se calcula con la fórmula: tiempo retardado igual a la distancia sobre la velocidad del sonido, este tiempo se convierte en número de muestras multiplicándolo por la frecuencia de muestreo (sr), usando la funcion np.pad() que agrega ceros al inicio de la señal simulando el tiempo de propagación del sonido antes de ser captado por el micrófono.
+- Se establecieron las distancias en metros entre los hablantes y los celulares, cada señal de audio tiene un retardo en función de la distancia que el sonido debe recorrer desde el hablante hasta el celular. Se calcula con la fórmula: tiempo retardado igual a la distancia sobre la velocidad del sonido, este tiempo se convierte en número de muestras multiplicándolo por la frecuencia de muestreo (sr), usando la funcion np.pad() que agrega ceros al inicio de la señal simulando el tiempo de propagación del sonido antes de ser captado por el micrófono. Se calcula un factor de atenuación para cada señal basado en la distancia de los hablantes a los celulares, se obtiene la cantidad mínima de muestras entre las señales para asegurar que tengan la misma longitud antes de graficarlas. Luego se grafica utilizando la biblioteca import matplotlib.pyplot as plt para graficar y la biblioteca import librosa.display para que muestre la forma de la onda que da cada audio, se le asigna un color a cada señal, un tamaño al grafico y se le añaden etiquetas y leyenda para identificar las señales. 
+
 - ![image](https://github.com/user-attachments/assets/e55c31c9-720b-4de9-b75d-0da92b11e72b)
 
 
