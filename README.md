@@ -71,10 +71,15 @@ La representacion grafica de las señales de ambos audios es:
 
 ![image](https://github.com/user-attachments/assets/0036298c-dc5f-48fd-aa6a-07ebff4db578)
 
+El analisis en el dominio del tiempo Permite visualizar la variación de la señal a lo largo del tiempo, Se pueden identificar pausas, silencios, cambios de intensidad y eventos transitorios, Es útil para reconocer la estructura de la señal y detectar ruidos evidentes.
+
 - Se calcula la transfromada de Fourier rapida y su grafica para pasar del dominio del tiempo al dominio de la frecuencia, se calcula la frecuencia con las funciones para la transformada, se aplica la transformada a cada audio. Se grafican las magnitudes de la FFT  en función de las frecuencias, Solo se usa la mitad del espectro porque la FFT es simétrica respecto al eje de Nyquist. Se le da un tamaño al grafico, un nombre a cada eje y una leyenda para identificar.
 
 ![image](https://github.com/user-attachments/assets/3b235c17-3e98-4c42-915e-ac96a482d385)
 
+Se representa con un espectro de frecuencia donde el eje X es la frecuencia (en Hz) y el eje Y es la amplitud, Se usa una escala lineal para identificar picos dominantes y una escala logarítmica (semilog) para detectar componentes débiles que podrían pasar desapercibidos, Permite identificar las frecuencias características de la voz y determinar si hay ruido o interferencias no deseadas, Es clave para evaluar si la señal extraída conserva las frecuencias de la voz humana y si se eliminaron correctamente otras fuentes de ruido.
+
+En este caso, ayuda a ver cómo la voz extraída difiere de las señales originales capturadas por los micrófonos.
 El espectro de la transfromada de Fourier es: 
 Escala lineal, para observar los picos de frecuencia dominantes.
 
