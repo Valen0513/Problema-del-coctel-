@@ -97,7 +97,7 @@ La grafica de la señal extraida es:
 
 ![image](https://github.com/user-attachments/assets/db80f1fb-b902-4c1c-b031-049dadace1e2)
 
-
+- Por ultimo se calcula la transformada de Fourier y el espectro de la señal extraida. Se calculan los valores de la frecuencia para la transformada con el numero total de muestras de la voz extraida y con su periodo de muestreo, se calcula la transfromada de Fourier rapida contiene los coeficientes de frecuencia donde la magnitud representa la amplitud de cada freceucnia y la fase que indica el desfase en una determinada frecuencia 
 
 
 Se seleccionó la señal correspondiente a la voz de interés, evaluando su relación señal a ruido (SNR).
