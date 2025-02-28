@@ -89,4 +89,15 @@ El espectro de la transformada de Fourier en escala logaritmica es:
 
 Los resultados son: La voz extraída corresponde a la fuente 2, SNR de la voz extraída: 64.16 dB, La señal ha sido guardada como 'voz_extraida.wav'.
 
+- Se normaliza la señal dividiendo por su valor absoluto máximo, asegurando que la amplitud máxima esté en ±1 para evitar distorsiones al guardarla en un archivo, sf.write de la libreria import soundfile as sf Guarda la señal extraída como un archivo de audio (voz_extraida.wav) con la frecuencia de muestreo sr. Luego se grafica la señal de la voz extraida, librosa.display.waveshow muestra la forma de onda de la señal de voz extraída, se agrega un titulo a cada eje, se dibuja el grafico.
+
+![image](https://github.com/user-attachments/assets/1996278f-c21e-46fb-96f9-66f61ce34463)
+
+La grafica de la señal extraida es: 
+
+![image](https://github.com/user-attachments/assets/db80f1fb-b902-4c1c-b031-049dadace1e2)
+
+
+
+
 Se seleccionó la señal correspondiente a la voz de interés, evaluando su relación señal a ruido (SNR).
