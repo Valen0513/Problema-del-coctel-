@@ -99,5 +99,10 @@ La grafica de la señal extraida es:
 
 - Por ultimo se calcula la transformada de Fourier y el espectro de la señal extraida. Se calculan los valores de la frecuencia para la transformada con el numero total de muestras de la voz extraida y con su periodo de muestreo, se calcula la transfromada de Fourier rapida contiene los coeficientes de frecuencia donde la magnitud representa la amplitud de cada freceucnia y la fase que indica el desfase en una determinada frecuencia. Para su grafico primero se crea la figura con un tamaño especifico, contiene el modulo de la FFT en el rango de frecuencias positivas, frecuencia[:len(frecuencia)//2]: solo se toma la mitad positiva del espectro, ya que la FFT es simétrica, y se agregan titulos y etiquetas a los ejes. Y luego se hace lo mismo en escala logaritmica. 
 
+![image](https://github.com/user-attachments/assets/03a1a208-f882-447e-9c3b-86b3320d34aa)
 
-Se seleccionó la señal correspondiente a la voz de interés, evaluando su relación señal a ruido (SNR).
+El espectro en escala logaritmica 
+
+![image](https://github.com/user-attachments/assets/39c44a33-8f8e-4904-b21c-da0b60bc8c55)
+
+
