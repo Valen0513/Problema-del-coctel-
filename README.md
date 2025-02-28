@@ -67,9 +67,11 @@ Los resultados fueron: el SNR del audio 1 es:  19.52798366546631 dB, el SNR del 
 
 ![image](https://github.com/user-attachments/assets/e55c31c9-720b-4de9-b75d-0da92b11e72b)
 
-- Se calcula la transfromada de Fourier rapida y su grafica para pasar del dominio del tiempo al dominio de la frecuencia, se calcula la frecuencia con las funciones para la transformada, se aplica la transformada a cada audio 
+- Se calcula la transfromada de Fourier rapida y su grafica para pasar del dominio del tiempo al dominio de la frecuencia, se calcula la frecuencia con las funciones para la transformada, se aplica la transformada a cada audio. Se grafican las magnitudes de la FFT  en función de las frecuencias, Solo se usa la mitad del espectro porque la FFT es simétrica respecto al eje de Nyquist. Se le da un tamaño al grafico, un nombre a cada eje y una leyenda para identificar.
+
 ![image](https://github.com/user-attachments/assets/3b235c17-3e98-4c42-915e-ac96a482d385)
 
-Se aplicó el método ICA para separar las fuentes independientes.
+- Se aplicó el método ICA para separar las fuentes independientes. Se crea una matriz F que contiene la señal captada por cada audio, la T al final representa que Transpone la matriz para que las filas representen muestras en el tiempo y las columnas representen los audios. Se aplica ICA con dos componentes porque tiene dos señales mezcladas, fit_transform(F): Ajusta el modelo a los datos y devuelve las señales separadas en la variable señales_separadas, esta variable contiene las dos señales separadas una en cada columna. Se calcula la energia de la señal 
+
 
 Se seleccionó la señal correspondiente a la voz de interés, evaluando su relación señal a ruido (SNR).
