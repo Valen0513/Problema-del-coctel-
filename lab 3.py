@@ -26,11 +26,11 @@ SNR2=10*np.log10(potencia_señal2/potencia_señal3)
 print ("el SNR del audio 1 es: ",SNR1,"dB")
 print ("el SNR del audio 2 es: ",SNR2,"dB")
 
-dist_h1_m1 = 0.5  
-dist_h2_m2 = 0.7  
-dist_h1_m2 = 0.8 
-dist_h2_m1 = 0.9 
-dist_m1_m2 = 1.0  
+dist_h1_m1 = 0.72  
+dist_h2_m2 = 0.87  
+dist_h1_m2 = 0.90 
+dist_h2_m1 = 0.78 
+dist_m1_m2 = 1.46  
 vel_sonido = 343  
 
 
@@ -75,11 +75,17 @@ plt.xlabel("Frecuencia (Hz)")
 plt.ylabel("Amplitud")
 plt.show()
 
-
+plt.figure(figsize=(10, 4))
+plt.semilogy(frecuencia[:len(frecuencia)//2], np.abs(trans_audio1[:len(frecuencia)//2]), color="purple", label="Audio 1")
+plt.semilogy(frecuencia[:len(frecuencia)//2], np.abs(trans_audio2[:len(frecuencia)//2]), color=pastel_blue, label="Audio 2")
+plt.legend()
+plt.title("Espectro de Frecuencia (FFT)")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Amplitud")
+plt.show()
 
 total_muestras = min(len(audio1_inicio), len(audio2_inicio))
 F = np.array([audio1[:total_muestras], audio2[:total_muestras]]).T
-
 
 ica = FastICA(n_components=2, random_state=42)
 señales_separadas = ica.fit_transform(F)
@@ -87,21 +93,16 @@ señales_separadas = ica.fit_transform(F)
 energias = [np.mean(señal**2) for señal in señales_separadas.T]
 indice_voz = np.argmax(energias)  
 
-
 voz_extraida = señales_separadas[:, indice_voz]
-
 
 potencia_voz = np.mean(voz_extraida**2)
 potencia_ruido = np.mean(audio3[:total_muestras]**2)
 
 snr_voz = 10 * np.log10(potencia_voz / potencia_ruido)
 
-
 voz_extraida /= np.max(np.abs(voz_extraida))
 
-
 sf.write("voz_extraida.wav", voz_extraida, sr)
-
 
 plt.figure(figsize=(10, 4))
 librosa.display.waveshow(voz_extraida, sr=sr, color="blue")
@@ -116,6 +117,13 @@ transformada = np.fft.fft(voz_extraida)
 
 plt.figure(figsize=(10, 4))
 plt.plot(frecuencia[:len(frecuencia)//2], np.abs(transformada[:len(frecuencia)//2]), color="purple")
+plt.title("Espectro de Frecuencia de la Voz Extraída")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Amplitud")
+plt.show()
+
+plt.figure(figsize=(10, 4))
+plt.semilogy (frecuencia[:len(frecuencia)//2], np.abs(transformada[:len(frecuencia)//2]), color="purple")
 plt.title("Espectro de Frecuencia de la Voz Extraída")
 plt.xlabel("Frecuencia (Hz)")
 plt.ylabel("Amplitud")
