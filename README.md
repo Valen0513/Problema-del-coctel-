@@ -76,10 +76,12 @@ La representacion grafica de las señales de ambos audios es:
 ![image](https://github.com/user-attachments/assets/3b235c17-3e98-4c42-915e-ac96a482d385)
 
 El espectro de la transfromada de Fourier es: 
+Escala lineal, para observar los picos de frecuencia dominantes.
 
 ![image](https://github.com/user-attachments/assets/04822bf2-db45-4e26-b65d-916249580f57)
 
 El espectro de la transformada de Fourier en escala logaritmica es:
+Escala logarítmica, para detectar componentes débiles de la señal.
 
 ![image](https://github.com/user-attachments/assets/691a4178-d9bc-494c-b562-a739e95a07dd)
 
@@ -88,6 +90,8 @@ El espectro de la transformada de Fourier en escala logaritmica es:
 ![image](https://github.com/user-attachments/assets/06c504d3-4084-4ffc-a51b-03e2bad1f919)
 
 Los resultados son: La voz extraída corresponde a la fuente 2, SNR de la voz extraída: 64.16 dB, La señal ha sido guardada como 'voz_extraida.wav'.
+
+El aumento del SNR demostró la efectividad del algoritmo ICA, aunque la calidad del audio depende de la disposición de micrófonos y la presencia de ruido residual.
 
 - Se normaliza la señal dividiendo por su valor absoluto máximo, asegurando que la amplitud máxima esté en ±1 para evitar distorsiones al guardarla en un archivo, sf.write de la libreria import soundfile as sf Guarda la señal extraída como un archivo de audio (voz_extraida.wav) con la frecuencia de muestreo sr. Luego se grafica la señal de la voz extraida, librosa.display.waveshow muestra la forma de onda de la señal de voz extraída, se agrega un titulo a cada eje, se dibuja el grafico.
 
@@ -107,4 +111,7 @@ El espectro en escala logaritmica
 
 ![image](https://github.com/user-attachments/assets/39c44a33-8f8e-4904-b21c-da0b60bc8c55)
 
+Conclusiones
+
+El problema de la fiesta de cóctel se puede abordar eficazmente mediante ICA, logrando extraer una señal de voz específica de un entorno ruidoso. La correcta configuración del sistema es clave para optimizar los resultados. Este experimento demostró la importancia de la disposición espacial de las fuentes y micrófonos en la separación de señales.
 
