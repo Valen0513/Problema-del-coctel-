@@ -61,6 +61,12 @@ Se calcula la potencia promedio de cada señal, que es el promedio de los valore
 
 Utilizando la formula anteriormente mencionada se calcula el SNR de cada audio con respecto al audio del ambiente en dB 
 
+Los resultados fueron: el SNR del audio 1 es:  19.52798366546631 dB, el SNR del audio 2 es:  24.88265037536621 dB
+
+- Se establecieron las distancias en metros entre los hablantes y los celulares, cada señal de audio tiene un retardo en función de la distancia que el sonido debe recorrer desde el hablante hasta el celular. Se calcula con la fórmula: tiempo retardado igual a la distancia sobre la velocidad del sonido, este tiempo se convierte en número de muestras multiplicándolo por la frecuencia de muestreo (sr), usando la funcion np.pad() que agrega ceros al inicio de la señal simulando el tiempo de propagación del sonido antes de ser captado por el micrófono.
+- ![image](https://github.com/user-attachments/assets/e55c31c9-720b-4de9-b75d-0da92b11e72b)
+
+
 Se aplicó el método ICA para separar las fuentes independientes.
 
 Se seleccionó la señal correspondiente a la voz de interés, evaluando su relación señal a ruido (SNR).
