@@ -55,8 +55,11 @@ Se preprocesaron las señales, eliminando posibles ruidos no deseados y normaliz
 
 Donde: Pseñal es la potencia de la voz capturada por cada audio, y Pruido es la potencia de la grabacion del ambiente 
 
+Se calcula la potencia promedio de cada señal, que es el promedio de los valores al cuadrado (una medida de la energía de la señal).
+
 ![Captura de pantalla 2025-02-28 161837](https://github.com/user-attachments/assets/842625cc-4b5b-4c26-956f-9c22f4929693)
 
+Utilizando la formula anteriormente mencionada se calcula el SNR de cada audio con respecto al audio del ambiente en dB 
 
 Se aplicó el método ICA para separar las fuentes independientes.
 
