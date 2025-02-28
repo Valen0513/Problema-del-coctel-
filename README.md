@@ -106,7 +106,9 @@ La grafica de la señal extraida es:
 
 ![image](https://github.com/user-attachments/assets/db80f1fb-b902-4c1c-b031-049dadace1e2)
 
-- Por ultimo se calcula la transformada de Fourier y el espectro de la señal extraida. Se calculan los valores de la frecuencia para la transformada con el numero total de muestras de la voz extraida y con su periodo de muestreo, se calcula la transfromada de Fourier rapida contiene los coeficientes de frecuencia donde la magnitud representa la amplitud de cada freceucnia y la fase que indica el desfase en una determinada frecuencia. Para su grafico primero se crea la figura con un tamaño especifico, contiene el modulo de la FFT en el rango de frecuencias positivas, frecuencia[:len(frecuencia)//2]: solo se toma la mitad positiva del espectro, ya que la FFT es simétrica, y se agregan titulos y etiquetas a los ejes. Y luego se hace lo mismo en escala logaritmica. 
+- Por ultimo se calcula la transformada de Fourier y el espectro de la señal extraida. Se calculan los valores de la frecuencia para la transformada con el numero total de muestras de la voz extraida y con su periodo de muestreo, se calcula la transfromada de Fourier rapida contiene los coeficientes de frecuencia donde la magnitud representa la amplitud de cada freceucnia y la fase que indica el desfase en una determinada frecuencia. Para su grafico primero se crea la figura con un tamaño especifico, contiene el modulo de la FFT en el rango de frecuencias positivas, frecuencia[:len(frecuencia)//2]: solo se toma la mitad positiva del espectro, ya que la FFT es simétrica, y se agregan titulos y etiquetas a los ejes. Y luego se hace lo mismo en escala logaritmica.
+
+El objetivo del experimento era extraer la voz de una persona específica en un entorno ruidoso utilizando Análisis de Componentes Independientes (ICA). Se usaron varios microfonos de los celulares  para capturar una mezcla de las señales de voz de diferentes hablantes. El algoritmo ICA permitió separar estas señales con base en sus características estadísticas, logrando identificar la voz predominante.
 
 ![image](https://github.com/user-attachments/assets/cb281238-cca7-4704-81f9-888d21173928)
 
@@ -115,6 +117,12 @@ La grafica de la señal extraida es:
 El espectro en escala logaritmica 
 
 ![image](https://github.com/user-attachments/assets/39c44a33-8f8e-4904-b21c-da0b60bc8c55)
+
+Interpretación de los valores de SNR
+
+Un SNR bajo (por debajo de 20 dB) indica que la señal está contaminada con ruido, lo que es evidente en el audio 1 (19.53 dB).
+Un SNR mayor a 20 dB sugiere que la señal es relativamente clara, como en el audio 2 (24.88 dB), donde la voz deseada es más fuerte en comparación con el ruido.
+Un SNR alto (mayor a 60 dB) indica que la señal extraída es mucho más fuerte que el ruido. El valor de 64.16 dB confirma que la voz separada es de alta calidad y que el proceso de separación fue exitoso.
 
 Conclusiones
 
